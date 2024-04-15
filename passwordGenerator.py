@@ -14,7 +14,7 @@ layout = [
 [sg.InputText(size=(25,1),font=('Arial 20'), pad =(0,(0,10)),key='saida')],
 [sg.Button('GERAR', size=(8,1), font=('Arial 15'))],
 ]
-# commands
+# code
 poupW = sg.Window('Gerador de Senhas',layout=layout, element_justification='center',finalize=True)
 
 while True:
@@ -25,6 +25,6 @@ while True:
             sg.popup('informe a quantidade de digitos !')
             continue
     elif event == 'GERAR':
-        cond = string.ascii_letters + string.digits + '!@#$%&*()/><'
+        cond = string.ascii_letters + string.digits + '!@#$%&|´-_;:}"[]{*()/><'
         rand = random.SystemRandom()
         poupW['saida'].update(''.join(rand.choice(cond)for i in range(int(values['tamanho']))))
