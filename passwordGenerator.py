@@ -25,6 +25,6 @@ while True:
             sg.popup('informe a quantidade de digitos !')
             continue
     elif event == 'GERAR':
-        cond = string.ascii_letters + string.digits + '!@#$%&*()/><'
+        cond = string.ascii_letters + string.digits + '!@#$%&*[}[}|?-_,.()/><'
         rand = random.SystemRandom()
         poupW['saida'].update(''.join(rand.choice(cond)for i in range(int(values['tamanho']))))
